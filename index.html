@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Widget</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <section class="feedback-section">
+      <div class="feedback-widget">
+        <!-- Header -->
+        <header class="widget-header">
+          <h2>Share Your Feedback</h2>
+          <p>Your thoughts help us improve and deliver better experiences.</p>
+        </header>
+
+        <!-- Feedback Form -->
+        <form class="feedback-form" id="feedbackForm">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Name (optional)</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+          </div>
+
+          <!-- Rating -->
+          <div class="form-group rating-group">
+            <label>Rating</label>
+            <div class="stars" id="ratingStars">
+              <!-- JS will fill stars dynamically -->
+              <span data-value="1">&#9733;</span>
+              <span data-value="2">&#9733;</span>
+              <span data-value="3">&#9733;</span>
+              <span data-value="4">&#9733;</span>
+              <span data-value="5">&#9733;</span>
+            </div>
+          </div>
+          <!-- error message -->
+          <p class="error-msg hidden" id="ratingError">
+            Please select a rating first.
+          </p>
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Feedback <span>*</span></label>
+            <textarea
+              id="message"
+              placeholder="Write your feedback here..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn" class="submit-btn">
+            Submit Feedback
+          </button>
+
+          <!-- Success Message -->
+          <p class="success-msg" id="successMsg">
+            Thank you! Your feedback was submitted.
+          </p>
+        </form>
+        <!-- END FORM -->
+
+        <!-- Admin Mode Toggle -->
+        <button id="adminSwitch" class="admin-toggle">Switch Admin Mode</button>
+
+        <!-- ADMIN VIEW (hidden by default) -->
+        <div class="admin-view hidden" id="adminView">
+          <div class="admin-header">
+            <h3>Feedback Entries</h3>
+            <button id="clearAllBtn" class="clear-all-btn">Clear All</button>
+          </div>
+          <ul class="feedback-list" id="feedbackList">
+            <!-- JS renders items here -->
+
+            <!-- <li> class= "feedback-item" <li> -->
+            <!-- <li> class= "feedback-item" <li> -->
+            <!-- <li> class= "feedback-item" <li> -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="./app2.js"></script>
+  </body>
+</html>
